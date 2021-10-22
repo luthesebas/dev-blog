@@ -1,7 +1,7 @@
 ---
-title: This is my post
+title: This is my second post
 description: blog description
 published: true
 ---
 
-# This is my post
+# This is my second post
