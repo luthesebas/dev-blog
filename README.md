@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
 
+## Generate Static Build Artifacts
+
+1. Run `npm run build`
+2. Run `npm run scully`
+   1. If this not works try to run `npx scully --scanRoutes`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
