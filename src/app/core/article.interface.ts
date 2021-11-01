@@ -10,5 +10,6 @@ export interface Article {
   }
   tags?: string[];
   timeToRead?: string;
+  route: string;
 
 }
