@@ -1,1 +1,7 @@
-<p>article-list works!</p>
+<ol>
+  <li *ngFor="let article of articles">
+    <a [routerLink]="article.route">
+      <app-article-list-element [article]="article"></app-article-list-element>
+    </a>
+  </li>
+</ol>

@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  transition: all 200ms;
+  padding: 1.4%;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+a {
+  text-decoration: none;
+}

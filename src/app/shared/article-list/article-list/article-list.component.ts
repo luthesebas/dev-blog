@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+
+import { Article } from 'src/app/core/article.interface';
 
 @Component({
   selector: 'app-article-list',
   templateUrl: './article-list.component.html',
-  styleUrls: ['./article-list.component.scss']
+  styleUrls: ['./article-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleListComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input()
+  articles: Article[] | null = null;
 
 }
