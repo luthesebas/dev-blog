@@ -9,5 +9,6 @@ export interface Article {
     alt: string;
   }
   tags?: string[];
+  timeToRead?: string;
 
 }
