@@ -4,16 +4,16 @@ import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
-import { BlogPost } from '../core/blog-post.interface';
+import { Article } from '../core/article.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogPostService {
+export class ArticleService {
 
-  blogPosts$: Observable<BlogPost[]> = this.scully.available$.pipe(
+  articles$: Observable<Article[]> = this.scully.available$.pipe(
     map(this.onlyPublished),
-    map(this.toBlogPosts),
+    map(this.toArticles),
     shareReplay(1)
   );
 
@@ -23,8 +23,8 @@ export class BlogPostService {
     return routes.filter(route => route.published);
   }
 
-  toBlogPosts(routes: ScullyRoute[]): BlogPost[] {
-    return routes.map(route => (<BlogPost>{
+  toArticles(routes: ScullyRoute[]): Article[] {
+    return routes.map(route => (<Article>{
       ...route,
       dateOfPublication: route.dateOfPublication && new Date(route.dateOfPublication),
     }));
