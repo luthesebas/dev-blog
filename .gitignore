@@ -11,8 +11,12 @@
 /node_modules
 
 # scully.io
-/.scully
-/scully
+.scully
+#/scully/**/*.js
+#/scully/**/*.js.map
+/scully/*.*
+/scully/plugins/*
+!/scully/plugins/*.ts
 scully.log
 
 # profiling files
