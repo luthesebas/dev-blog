@@ -24,10 +24,26 @@ export class ArticleService {
   }
 
   toArticles(routes: ScullyRoute[]): Article[] {
-    return routes.map(route => (<Article>{
-      ...route,
-      dateOfPublication: route.dateOfPublication && new Date(route.dateOfPublication),
-    }));
+    return routes.map(route => {
+      let thumbnail = null;
+      if (route.thumbnailUri) {
+        thumbnail = {
+          uri: route.thumbnailUri,
+          alt: route.thumbnailAlt ?? 'Thumbnail'
+        }
+      }
+
+      let dateOfPublication = null;
+      if (route.dateOfPublication) {
+        dateOfPublication = new Date(route.dateOfPublication);
+      }
+
+      return (<Article>{
+        ...route,
+        thumbnail,
+        dateOfPublication,
+      });
+    });
   }
 
 }
