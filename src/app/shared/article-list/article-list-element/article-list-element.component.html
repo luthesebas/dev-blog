@@ -1,1 +1,12 @@
-<p>article-list-element works!</p>
+<mat-card>
+  <img
+    *ngIf="article.thumbnail"
+    mat-card-image
+    [src]="article.thumbnail.uri"
+    [alt]="article.thumbnail.alt"
+  />
+  <mat-card-title>{{ article.title }}</mat-card-title>
+  <mat-card-content>
+    <p appTruncate>{{ article.description }}</p>
+  </mat-card-content>
+</mat-card>
