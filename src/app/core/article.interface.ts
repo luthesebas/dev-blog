@@ -1,6 +1,6 @@
 export interface Article {
 
-  title: string;
+  title?: string;
   description?: string;
   author?: string;
   dateOfPublication?: Date;
