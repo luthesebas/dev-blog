@@ -4,7 +4,10 @@ export interface Article {
   description?: string;
   author?: string;
   dateOfPublication?: Date;
-  thumbnailUri?: string;
+  thumbnail?: {
+    uri: string;
+    alt: string;
+  }
   tags?: string[];
 
 }
