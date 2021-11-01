@@ -2,14 +2,18 @@
   "name": "dev-blog",
   "version": "0.0.0",
   "scripts": {
+    "build": "npm run angular:build && npm run scully:build",
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build && rm -rf docs/* && npx scully",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint",
+    "angular:start": "ng serve",
+    "angular:build": "ng build",
+    "angular:watch": "ng build --watch --configuration development",
+    "angular:test": "ng test",
+    "angular:lint": "ng lint",
     "scully": "npx scully --",
-    "scully:serve": "npx scully serve --"
+    "scully:start": "npx scully serve",
+    "scully:build": "npm run scully:clean && npx scully",
+    "scully:scan": "npx scully --scanRoutes",
+    "scully:clean": "rm -rf docs/*"
   },
   "private": true,
   "dependencies": {
