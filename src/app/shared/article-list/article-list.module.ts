@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ArticleListComponent
+  ],
   imports: [
     CommonModule
   ]
