@@ -2,7 +2,7 @@
   "name": "dev-blog",
   "version": "0.0.0",
   "scripts": {
-    "build": "npm run angular:build && npm run scully:build",
+    "app:build": "npm run angular:build && npm run scully:build",
     "ng": "ng",
     "angular:start": "ng serve",
     "angular:build": "ng build",
