@@ -3,6 +3,11 @@ img {
   object-fit: cover;
 }
 
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 mat-chip-list {
   display: block;
   margin: 1rem 0;
