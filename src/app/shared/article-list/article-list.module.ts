@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 
@@ -14,7 +15,8 @@ import { ArticleListComponent } from './article-list/article-list.component';
   imports: [
     CommonModule,
     RouterModule,
-    MatCardModule
+    MatButtonModule,
+    MatCardModule,
   ],
   exports: [
     ArticleListComponent
