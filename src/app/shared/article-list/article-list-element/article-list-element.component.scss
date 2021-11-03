@@ -3,3 +3,14 @@ img {
   object-fit: cover;
 }
 
+mat-chip-list {
+  display: block;
+  margin: 1rem 0;
+}
+
+mat-chip.mat-small {
+  color: var(--accent-lighter-color);
+  padding: 0 0.725rem;
+  min-height: 1.5rem;
+  font-size: 12px;
+}
