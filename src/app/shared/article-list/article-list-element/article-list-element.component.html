@@ -12,8 +12,8 @@
   <a [routerLink]="article.route">
     <mat-card-title>{{ article.title }}</mat-card-title>
   </a>
-  <mat-chip-list *ngIf="article.tags" aria-label="Article tags">
   <span class="mat-small">{{ article.author }}, {{ article.dateOfPublication | date:'longDate' }}</span>
+  <mat-chip-list *ngIf="article.tags" style="pointer-events: none;" aria-label="Article tags">
     <mat-chip *ngFor="let tag of article.tags" class="mat-small">
       {{ tag }}
     </mat-chip>
