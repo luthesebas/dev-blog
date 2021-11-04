@@ -1,9 +1,3 @@
-#    - name: Blub
-#      uses: actions/checkout@v2
-#      with:
-#        ref: gh-pages
-
-
 name: gh-pages CI
 
 on:
@@ -20,25 +14,27 @@ jobs:
         source_ref: main
         target_branch: gh-pages
 
-  update:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
       with:
-        node-version: ${{ matrix.node-version }}
+        ref: gh-pages
+    - name: Setup Node.js environment 
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
         cache: 'npm'
     - run: npm ci
     - run: npm run app:build
+
+  update:
+    runs-on: ubuntu-latest
+    steps:
     - name: Update static files
       run: |
         git config user.name "Dev-Blog Bot"
         git config user.email "bot@dev-blog.com"
+        git add .
         git commit -m "[Bot] Update static files"
         git push
