@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./shared/blog/blog.module').then(m => m.BlogModule)
   },
   {
+    path: 'javascript',
+    loadChildren: () => import('./shared/blog/blog.module').then(m => m.BlogModule)
+  },
+  {
      path: '',
      loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   }

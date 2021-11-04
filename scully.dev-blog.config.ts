@@ -11,6 +11,10 @@ export const config: ScullyConfig = {
         folder: "./articles/angular"
       }
     },
+    '/javascript/:slug': {
+      type: 'contentFolder',
+      slug: {
+        folder: "./articles/javascript"
       }
     },
   }
