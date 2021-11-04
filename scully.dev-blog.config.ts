@@ -5,10 +5,12 @@ export const config: ScullyConfig = {
   projectName: "dev-blog",
   outDir: './docs',
   routes: {
-    '/blog/:slug': {
+    '/angular/:slug': {
       type: 'contentFolder',
       slug: {
-        folder: "./articles"
+        folder: "./articles/angular"
+      }
+    },
       }
     },
   }
