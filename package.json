@@ -6,7 +6,7 @@
     "app:build": "npm run angular:build && npm run scully:build",
     "ng": "ng",
     "angular:start": "ng serve",
-    "angular:build": "ng build --base-href /dev-blog",
+    "angular:build": "ng build --base-href /dev-blog/",
     "angular:watch": "ng build --watch --configuration development",
     "angular:test": "ng test",
     "angular:lint": "ng lint",
