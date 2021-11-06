@@ -5,7 +5,7 @@ author: Sebastian Luther
 dateOfPublication: 2021-11-03
 published: true
 thumbnailUri: https://images.pexels.com/photos/1381938/pexels-photo-1381938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=500
-tags: [angular, pipes]
+tags: [Angular, Pipes]
 timeToRead: 5
 ---
 
