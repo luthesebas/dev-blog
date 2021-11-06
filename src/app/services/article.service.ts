@@ -13,7 +13,12 @@ export class ArticleService {
 
   articles$: Observable<Article[]> = this.scully.available$.pipe(
     map(this.onlyPublished),
-    map(this.toArticles),
+    map(this.mapToArticles),
+    shareReplay(1)
+  );
+
+  predefinedTagSuggestions$ = this.articles$.pipe(
+    map(this.mapArticlesToTags),
     shareReplay(1)
   );
 
@@ -23,7 +28,23 @@ export class ArticleService {
     return routes.filter(route => route.published);
   }
 
-  toArticles(routes: ScullyRoute[]): Article[] {
+  // TODO: Extract into Mapping Service
+  private mapArticlesToTags(articles: Article[]) {
+    const tags = articles
+      .filter(article => article.tags != null)
+      .map(article => article.tags as string[])
+      .reduce(
+        (allTags, articleTags) => {
+          allTags.push(...articleTags);
+          return allTags;
+        }, []
+      );
+
+    return [...new Set(tags)]
+  }
+
+  // TODO: Extract into Mapping Service
+  private mapToArticles(routes: ScullyRoute[]): Article[] {
     return routes.map(route => {
       let thumbnail = null;
       if (route.thumbnailUri) {
