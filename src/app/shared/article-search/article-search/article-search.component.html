@@ -1,0 +1,20 @@
+<form [formGroup]="search" (ngSubmit)="articleSearchService.search(search.value)">
+  <mat-form-field appearance="fill">
+    <mat-label>Search Blog Posts</mat-label>
+    <input
+      matInput
+      type="search"
+      placeholder="by terms and tags…"
+      formControlName="query"
+      [matAutocomplete]="autocomplete"
+    />
+    <mat-autocomplete #autocomplete="matAutocomplete">
+      <mat-option *ngFor="let suggestion of suggestions$ | async" [value]="suggestion">
+        {{ suggestion }}
+      </mat-option>
+    </mat-autocomplete>
+    <button mat-icon-button matSuffix type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
