@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 import { Article } from '../core/article.interface';
@@ -65,6 +65,12 @@ export class ArticleService {
         dateOfPublication,
       });
     });
+  }
+
+  search(query?: string) {
+    // TODO: Implement
+    console.log(`Search articles by slug: '${query}'`)
+    return of(<Article[]>[]);
   }
 
 }
