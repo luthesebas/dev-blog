@@ -10,6 +10,7 @@
 
 // Font
 
+$line-height: 1.2;
 $fontConfig: (
   display-4: mat.define-typography-level(112px, 112px, 300, "Roboto", -0.0134em),
   display-3: mat.define-typography-level(56px, 56px, 400, "Roboto", -0.0089em),
@@ -23,7 +24,8 @@ $fontConfig: (
   body-1: mat.define-typography-level(14px, 20px, 400, "Roboto", 0.0179em),
   button: mat.define-typography-level(14px, 14px, 500, "Roboto", 0.0893em),
   caption: mat.define-typography-level(12px, 20px, 400, "Roboto", 0.0333em),
-  input: mat.define-typography-level(inherit, 1.125, 400, "Roboto", 1.5px),
+  input:
+    mat.define-typography-level(inherit, $line-height, 400, "Roboto", 1.5px),
 );
 
 // Foreground Elements
@@ -271,5 +273,5 @@ body {
 
 body {
   margin: 0;
-  line-height: 1.2;
+  line-height: $line-height;
 }
