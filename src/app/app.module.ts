@@ -18,7 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ScullyLibModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
