@@ -5,23 +5,27 @@ on:
     branches: [ main ]
 
 jobs:
-  merge:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
-    - name: Branch Merge
-      uses: everlytic/branch-merge@1.1.2
+    - uses: actions/checkout@v2
       with:
-        source_ref: main
-        target_branch: gh-pages
+        fetch-depth: 0
+    - name: Reset gh-pages to main
+      run: |
+        git checkout gh-pages
+        git reset --hard main
+    - name: Force push reset gh-pages
+      run: git push -f
 
-  update:
+  update-artifacts:
     runs-on: ubuntu-latest
-    needs: merge
+    needs: synchronize
     steps:
     - uses: actions/checkout@v2
       with:
         ref: gh-pages
-    - name: Setup Node.js environment 
+    - name: Setup Node.js environment
       uses: actions/setup-node@v2
       with:
         node-version: 14
@@ -30,8 +34,8 @@ jobs:
     - run: npm run app:build
     - name: Update static files
       run: |
-        git config user.name "Dev-Blog Bot"
-        git config user.email "bot@dev-blog.com"
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git add .
         git commit -m "[Bot] Update static files"
         git push
