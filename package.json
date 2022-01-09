@@ -15,6 +15,7 @@
     "scully": "npx scully --",
     "scully:start": "npx scully serve",
     "scully:clean-build": "npm run scully:clean && npm run scully:scan",
+    "scully:build": "npx scully --scanRoutes --prod",
     "scully:clean": "rm -rf docs/*",
     "lint": "ng lint"
   },
