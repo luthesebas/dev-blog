@@ -30,7 +30,7 @@ jobs:
       with:
         node-version: 14
         cache: 'npm'
-    - run: npm ci
+    - run: npm i
     - run: npm run app:build
     - name: Update static files
       run: |
