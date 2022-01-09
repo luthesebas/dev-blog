@@ -27,9 +27,9 @@ export class ArticleSearchService implements OnDestroy {
   ) {}
 
   ngOnDestroy(): void {
-    this.filteredArticlesSubject.next();
+    this.filteredArticlesSubject.next([]);
     this.filteredArticlesSubject.complete();
-    this.tagSuggestionsSubject.next();
+    this.tagSuggestionsSubject.next([]);
     this.tagSuggestionsSubject.complete();
   }
 
